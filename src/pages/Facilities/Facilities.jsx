@@ -4,7 +4,7 @@ export const Facilities = () => {
 
     return (
         <div className='facilitiesDesign'>
-            Soy la vista Login
+            Soy la vista Facilities
         </div>
     )
 }

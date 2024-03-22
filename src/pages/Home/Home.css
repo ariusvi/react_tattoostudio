@@ -1,8 +1,11 @@
+
+
 .homeDesign {
     height: 76vh;
     width: 100vw;
 
-    background-color: bisque;
+    background-color:mediumpurple;
+
 
     display: flex;
     flex-direction: column;
