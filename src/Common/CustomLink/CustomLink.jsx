@@ -1,8 +1,8 @@
-import './Navigator.css'
+import './CustomLink.css'
 
 import { useNavigate } from 'react-router-dom'
 
-export const Navigator = ( {title, destination} ) => {
+export const CustomLink = ( {title, destination} ) => {
 
     const navigate = useNavigate ();
 
