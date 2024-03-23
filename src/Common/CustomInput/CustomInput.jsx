@@ -1,15 +1,16 @@
 import "./CustomInput.css"
 
-export const CustomInput = ({className, type, name, value, placeholder, functionChange}) => {
+export const CustomInput = ({className, type, name, value, placeholder, functionChange, disabled}) => {
 
     return (
-        <input
+        <input 
             className={className}
             type={type}
             name={name}
             value={value}
             placeholder={placeholder}
             onChange={functionChange}
+            disabled={disabled}
         />
     )
 }

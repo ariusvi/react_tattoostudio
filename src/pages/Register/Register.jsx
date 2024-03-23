@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { CustomInput } from '../../Common/CustomInput/CustomInput'
 import './Register.css'
 
-export const Register = (e) => {
+export const Register = () => {
 
     const [user, setUser] = useState({
         //son los campos que se piden en el register del backend
@@ -14,45 +14,56 @@ export const Register = (e) => {
 
     //funcion emit que esta en el padre
     const inputHandler = (e) => {
+        setUser(
+            (prevState) => ({
+                ...prevState,
+                [e.target.name]: e.target.value
+            })
+        )
         console.log(e.target.value)
     }
 
     return (
         <div className='registerDesign'>
+            <pre>{JSON.stringify(user, null, 2)}</pre>
             <CustomInput 
                 className={"inputDesign"}
                 type={"text"}
-                placeholder={"Name"}
                 name={"first_name"}
                 value={user.first_name || ""}
-                onChange={(e) => inputHandler (e)}
+                placeholder={"Name"}
+                functionChange={(e) => inputHandler (e)}
+                disabled={""}
             />
 
         <CustomInput 
                 className={"inputDesign"}
                 type={"text"}
-                placeholder={"Surname"}
                 name={"last_name"}
                 value={user.last_name || ""}
-                onChange={(e) => inputHandler (e)}
+                placeholder={"Surname"}
+                functionChange={(e) => inputHandler (e)}
+                disabled={""}
             />
             
         <CustomInput 
                 className={"inputDesign"}
                 type={"email"}
-                placeholder={"email"}
                 name={"email"}
                 value={user.email || ""}
-                onChange={(e) => inputHandler (e)}
+                placeholder={"email"}
+                functionChange={(e) => inputHandler (e)}
+                disabled={""}
             />
             
         <CustomInput 
                 className={"inputDesign"}
                 type={"password"}
-                placeholder={"password"}
                 name={"password"}
                 value={user.password || ""}
-                onChange={(e) => inputHandler (e)}
+                placeholder={"password"}
+                functionChange={(e) => inputHandler (e)}
+                disabled={""}
             />
         </div>
     )

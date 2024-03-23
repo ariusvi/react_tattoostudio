@@ -10,7 +10,7 @@
     align-items: flex-end;
 }
 
-.authMenu {
+.menu {
     display: flex;
     flex-direction: row;
 }

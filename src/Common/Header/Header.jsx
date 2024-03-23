@@ -3,7 +3,7 @@ import './Header.css'
 import { CustomLink } from '../CustomLink/CustomLink'
 
 export const Header = () => {
-    const token = true;
+    const token = false;
     const logOut = () => {
         // funcion para deslogear
     }
@@ -15,15 +15,15 @@ export const Header = () => {
                 ? ( 
                     // si token es true, muestra un tipo de botones
                     <div className="menu">
-                        <CustomLink title="name"    destination="/profile" />
-                        <CustomLink title="Log-out" destination="/" />
+                        <CustomLink title={"name"}    destination={"/profile"} />
+                        <CustomLink title={"Log-out"} onClick={() => logOut} />
                     </div>
                 ) 
                 : (
                     // si token es false, muestra otro tipo de botones
                     <div className="menu">
-                        <CustomLink title="Login"   destination="/login" />
-                        <CustomLink title="Register"   destination="/register" />
+                        <CustomLink title={"Login"}   destination={"/login"} />
+                        <CustomLink title={"Register"}   destination={"/register"} />
                 </div>)
             }
             <CustomLink title="Services" destination="/facilities" />

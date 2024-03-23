@@ -68,6 +68,7 @@ export const Login = () => {
                 value={credenciales.email || ""}
                 placeholder="write your email"
                 functionChange={inputHandler}
+                disabled={""}
             />
             <CustomInput
                 design="inputDesign"
@@ -77,6 +78,7 @@ export const Login = () => {
                 value={credenciales.password || ""}
                 placeholder="write your password"
                 functionChange={inputHandler}
+                disabled={""}
             />
             <div className="loginButton" onClick={logMe}>Log in</div>
             <div>{msgError}</div> 
