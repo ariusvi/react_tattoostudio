@@ -15,19 +15,19 @@ export const Header = () => {
                 ? ( 
                     // si token es true, muestra un tipo de botones
                     <div>
-                        <CustomLink title={"name"}    destination={"/"} />
-                        <CustomLink title={"Log-out"} onClick={() => logOut()} />
+                        <CustomLink title="name"    destination="/profile" />
+                        <CustomLink title="Log-out" destination="/" />
                     </div>
                 ) 
                 : (
                     // si token es false, muestra otro tipo de botones
                     <div>
-                        <CustomLink title={"Register"}   destination={"/register"} />
-                        {/* <CustomLink title={"Login"}   destination={"/login"} /> */}
+                        <CustomLink title="Register"   destination="/register" />
+                        {/* <CustomLink title="Login"   destination="/login" /> */}
                 </div>)
             }
-            <CustomLink title={"Services"} destination="/facilities" />
-            {/* <CustomLink title={"Login"} destination={"/login"} /> */}
+            <CustomLink title="Services" destination="/facilities" />
+            {/* <CustomLink title="Login" destination="/login" /> */}
         </div>
     );
 }

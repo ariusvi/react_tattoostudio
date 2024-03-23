@@ -31,7 +31,11 @@ export const Login = () => {
 
     const logMe = async () => {
 
-        
+            for (let credencial in credenciales){
+                if(credenciales[credencial]===""){
+                setMsgError("No has rellenado todos los campos")
+                return;}
+            }
 
             const fetched = await loginMe(credenciales)
 
