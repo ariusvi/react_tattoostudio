@@ -1,5 +1,6 @@
 import './Login.css'
 import { useState, useEffect } from 'react';
+import { CustomInput } from '../../Common/CustomInput/CustomInput';
 
 export const Login = () => {
 
@@ -20,4 +21,18 @@ export const Login = () => {
             // if i write in email, e.target.name is .. email.
             // if i write in password, e.target.name is .. password.
         }));
-    }};
+    };
+
+    return(
+        <div className='loginDesign'> 
+            <CustomInput 
+                design="inputDesign" 
+                type="text"
+                name="email"
+                value=""
+                placeholder="write your email"
+                functionChange={inputHandler}
+            />
+        </div>
+    )
+}
