@@ -9,7 +9,7 @@ import { Profile } from "../Profile/Profile";
 export const Body = () => {
     return (
         <Routes>
-            {/* aqui iran las vistas*/}
+            {/* aqui iran las vistas/pages*/}
             <Route path="/" element={<Home/>} />
             <Route path="/register" element={<Register/>} />
             <Route path="/login" element={<Login/>} />

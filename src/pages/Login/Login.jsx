@@ -33,7 +33,7 @@ export const Login = () => {
 
             for (let credencial in credenciales){
                 if(credenciales[credencial]===""){
-                setMsgError("No has rellenado todos los campos")
+                setMsgError("email and password are required")
                 return;}
             }
 

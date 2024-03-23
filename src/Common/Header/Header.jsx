@@ -9,21 +9,21 @@ export const Header = () => {
     }
     return (
 
-        <div className='headerDesign'>
+        <div className="headerDesign">
             <CustomLink title="Home" destination="/" />
             {token 
                 ? ( 
                     // si token es true, muestra un tipo de botones
-                    <div>
+                    <div className="menu">
                         <CustomLink title="name"    destination="/profile" />
                         <CustomLink title="Log-out" destination="/" />
                     </div>
                 ) 
                 : (
                     // si token es false, muestra otro tipo de botones
-                    <div>
+                    <div className="menu">
+                        <CustomLink title="Login"   destination="/login" />
                         <CustomLink title="Register"   destination="/register" />
-                        {/* <CustomLink title="Login"   destination="/login" /> */}
                 </div>)
             }
             <CustomLink title="Services" destination="/facilities" />
