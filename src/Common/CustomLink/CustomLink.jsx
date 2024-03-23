@@ -7,8 +7,8 @@ export const CustomLink = ( {title, destination} ) => {
     const navigate = useNavigate ();
 
     return (
-        <div className='navigatorDesign' onClick={() => navigate(destination)}>
+        <div className='customLinkDesign' onClick={() => navigate(destination)}>
             {title}
         </div>
     )
-}
+    }
