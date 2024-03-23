@@ -1,6 +1,8 @@
-import './Login.css'
+
 import { useState, useEffect } from 'react';
 import { CustomInput } from '../../Common/CustomInput/CustomInput';
+import { loginMe } from '../../services/apiCalls';
+import './Login.css'
 
 export const Login = () => {
 
@@ -23,6 +25,12 @@ export const Login = () => {
         }));
     };
 
+    const logMe = async () => {
+        const fetched = await loginMe(credenciales)
+
+        console.log(fetched)
+    }
+
     return(
         <div className='loginDesign'>
             {/* <pre>{JSON.stringify(credenciales, null, 2)}</pre> */}
@@ -43,7 +51,7 @@ export const Login = () => {
                 placeholder="write your password"
                 functionChange={inputHandler}
             />
-            <div className="loginButton">Log in</div>
+            <div className="loginButton" onClick={logMe}>Log in</div>
         </div>
     )
 };
