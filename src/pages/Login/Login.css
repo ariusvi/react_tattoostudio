@@ -9,3 +9,27 @@
     justify-content: center;
     align-items: center;
 }
+
+.loginButton{
+    height: 2.5em;
+    width: 10em;
+    background-color:lightseagreen;
+    border-radius: 0.5em;
+    transition: 0.4s;
+
+    font-style: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.loginButton:hover{
+    cursor: pointer;
+    background-color:lightskyblue;
+    border-radius: 0.5em;
+    transition: 0.4s;
+}
+

@@ -25,10 +25,10 @@ export const Login = () => {
 
     return(
         <div className='loginDesign'>
-            <pre>{JSON.stringify(credenciales, null, 2)}</pre>
+            {/* <pre>{JSON.stringify(credenciales, null, 2)}</pre> */}
             <CustomInput 
                 design="inputDesign" 
-                type="text"
+                type="email"
                 name="email"
                 value={credenciales.email || ""}
                 placeholder="write your email"
@@ -43,6 +43,7 @@ export const Login = () => {
                 placeholder="write your password"
                 functionChange={inputHandler}
             />
+            <div className="loginButton">Log in</div>
         </div>
     )
 };

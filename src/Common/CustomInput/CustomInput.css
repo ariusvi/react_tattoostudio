@@ -3,4 +3,6 @@
     width: 18em;
 
     border-radius: 0.5em;
+    border: 0.2em solid black;
+    margin: 2em;
 }
