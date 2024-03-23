@@ -6,8 +6,8 @@ export const Login = () => {
 
     const [credenciales, setCredenciales] = useState({ //el array con las credenciales actuales del usuario // la funcion que actualiza ese estado
         email: "",
-        password: ""
-    })
+        password: "",
+    });
 
     const inputHandler = (e) => {
         // In the CustomInput component, there is a function called functionChange with the inputHandler object. 
@@ -24,15 +24,25 @@ export const Login = () => {
     };
 
     return(
-        <div className='loginDesign'> 
+        <div className='loginDesign'>
+            <pre>{JSON.stringify(credenciales, null, 2)}</pre>
             <CustomInput 
                 design="inputDesign" 
                 type="text"
                 name="email"
-                value=""
+                value={credenciales.email || ""}
                 placeholder="write your email"
+                functionChange={inputHandler}
+            />
+            <CustomInput 
+                design="inputDesign"
+                // design={credenciales.errores ? "inputDesign inputerror" : "inputDesign"} //todo
+                type="password"
+                name="password"
+                value={credenciales.password || ""}
+                placeholder="write your password"
                 functionChange={inputHandler}
             />
         </div>
     )
-}
+};

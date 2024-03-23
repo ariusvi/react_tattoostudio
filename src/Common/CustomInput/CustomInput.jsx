@@ -1,6 +1,6 @@
 import "./CustomInput.css"
 
-export const CustomInput = ({className, type, name, value, onChangeFunction}) => {
+export const CustomInput = ({className, type, name, value, placeholder, functionChange}) => {
 
     return (
         <input
@@ -8,7 +8,8 @@ export const CustomInput = ({className, type, name, value, onChangeFunction}) =>
             type={type}
             name={name}
             value={value}
-            onChange={onChangeFunction}
+            placeholder={placeholder}
+            onChange={functionChange}
         />
     )
 }
