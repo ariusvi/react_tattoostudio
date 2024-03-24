@@ -1,12 +1,14 @@
+import './Register.css'
 import { useState, useEffect } from "react";
 import { CustomInput } from '../../Common/CustomInput/CustomInput'
-import './Register.css'
 import { CustomButton } from "../../Common/CustomButton/CustomButton";
 import { registerUser } from "../../services/apiCalls";
 import { validame } from "../../utils/functions";
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
 
+    const navigate = useNavigate()
     const [user, setUser] = useState({
         //son los campos que se piden en el register del backend
         first_name: "", 
@@ -58,6 +60,10 @@ export const Register = () => {
 
             console.log(fetched)
             setMsgError(fetched.message)
+
+            setTimeout(() => {
+                navigate("/login") //si se registra de forma correcta redirige al usuario a la visata navigate
+            },750)
 
         } catch (error) {
             setMsgError(error.message)

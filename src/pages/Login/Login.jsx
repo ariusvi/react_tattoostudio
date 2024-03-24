@@ -4,10 +4,11 @@ import { useState, useEffect } from 'react';
 import { CustomInput } from '../../Common/CustomInput/CustomInput';
 import { loginMe } from '../../services/apiCalls';
 import { decodeToken } from "react-jwt";
-
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
 
+    const navigate = useNavigate()
     const [credenciales, setCredenciales] = useState({ //el array con las credenciales actuales del usuario // la funcion que actualiza ese estado
         email: "",
         password: "",
@@ -53,8 +54,9 @@ export const Login = () => {
             sessionStorage.setItem("token", fetched)
             sessionStorage.setItem("user", JSON.stringify(decodificado))
 
-            //redirigir a Home //todo terminar esto
-        
+            setTimeout(() => {
+                navigate("/profile") 
+            },750)
 
     }
 
