@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { CustomInput } from '../../Common/CustomInput/CustomInput'
 import './Register.css'
 import { CustomButton } from "../../Common/CustomButton/CustomButton";
+import { registerUser } from "../../services/apiCalls";
 
 export const Register = () => {
 
@@ -12,6 +13,16 @@ export const Register = () => {
         email: "",
         password: "",
     })
+
+    const [userError, setUserError] = useState({
+        first_nameError: "", 
+        last_nameError: "",
+        emailError: "",
+        passwordError: "",
+
+    });
+
+    const [msgError, setMsgError] = useState("");
 
     //funcion emit que esta en el padre
     const inputHandler = (e) => {
@@ -25,8 +36,20 @@ export const Register = () => {
     }
 
     //funcion emit para registrar
-    const registerMe = () => {
-        console.log(user, "funcion register")
+    const registerMe = async () => {
+        try {
+            for (let elemento in user) {
+                if (user[elemento] === "") {
+                    throw new Error ("Todos los campos tienen que estar completos")
+                }
+            }
+            const fetched = await registerUser()
+
+            console.log(fetched);
+
+        } catch (error) {
+            setMsgError(error.message)
+        }
     }
 
     return (
@@ -76,6 +99,7 @@ export const Register = () => {
                 title={"Register"}
                 functionEmit={registerMe}
             />
+            {msgError}
         </div>
     )
 }
