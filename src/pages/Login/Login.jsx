@@ -69,6 +69,7 @@ export const Login = () => {
                 placeholder="write your email"
                 functionChange={inputHandler}
                 disabled={""}
+                onBlur={""}
             />
             <CustomInput
                 design="inputDesign"
@@ -79,6 +80,7 @@ export const Login = () => {
                 placeholder="write your password"
                 functionChange={inputHandler}
                 disabled={""}
+                onBlur={""}
             />
             <div className="loginButton" onClick={logMe}>Log in</div>
             <div>{msgError}</div> 

@@ -6,3 +6,7 @@
     border: 0.2em solid black;
     margin: 1em;
 }
+
+.inputDesignError{
+    border: 0.2em solid red;
+}

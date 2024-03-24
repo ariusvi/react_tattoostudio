@@ -9,3 +9,7 @@
     justify-content: center;
     align-items: center;
 }
+
+.error {
+    color:rgb(184, 22, 22);
+}
