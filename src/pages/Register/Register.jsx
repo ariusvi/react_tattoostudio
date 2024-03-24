@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { CustomInput } from '../../Common/CustomInput/CustomInput'
 import './Register.css'
+import { CustomButton } from "../../Common/CustomButton/CustomButton";
 
 export const Register = () => {
 
@@ -21,6 +22,11 @@ export const Register = () => {
             })
         )
         console.log(e.target.value)
+    }
+
+    //funcion emit para registrar
+    const registerMe = () => {
+        console.log(user, "funcion register")
     }
 
     return (
@@ -64,6 +70,11 @@ export const Register = () => {
                 placeholder={"password"}
                 functionChange={(e) => inputHandler (e)}
                 disabled={""}
+            />
+            <CustomButton 
+                className={"CustomButtonDesign"}
+                title={"Register"}
+                functionEmit={registerMe}
             />
         </div>
     )
