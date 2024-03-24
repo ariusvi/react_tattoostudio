@@ -54,9 +54,10 @@ export const Register = () => {
             }
             setMsgError("")
             
-            const fetched = await registerUser()
+            const fetched = await registerUser(user)
 
-            console.log(fetched);
+            console.log(fetched)
+            setMsgError(fetched.message)
 
         } catch (error) {
             setMsgError(error.message)

@@ -53,7 +53,7 @@ export const Login = () => {
             sessionStorage.setItem("token", fetched)
             sessionStorage.setItem("user", JSON.stringify(decodificado))
 
-            //redirigir a Home
+            //redirigir a Home //todo terminar esto
         
 
     }
