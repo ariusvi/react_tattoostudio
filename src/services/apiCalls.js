@@ -1,6 +1,6 @@
 const root = "http://localhost:4001/api/"
 
-export const loginMe = async (credenciales) => {
+export const loginUser = async (credenciales) => {
 
     const options = {
         method: "POST",
@@ -11,7 +11,6 @@ export const loginMe = async (credenciales) => {
     };
 
     try {
-        
     // auth/login
     const response = await fetch(`${root}auth/login`, options)
     const data = await response.json()
@@ -38,8 +37,7 @@ export const registerUser = async (user) => {
     };
 
     try {
-        
-    // auth/login
+    // auth/register
     const response = await fetch(`${root}auth/register`, options)
     const data = await response.json()
         
