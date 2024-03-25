@@ -58,7 +58,6 @@ export const Register = () => {
             
             const fetched = await registerUser(user)
 
-            console.log(fetched)
             setMsgError(fetched.message)
 
             setTimeout(() => { navigate("/login") }, 750) //si se registra de forma correcta redirige al usuario a la vista login
