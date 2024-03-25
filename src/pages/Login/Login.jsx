@@ -83,7 +83,8 @@ export const Login = () => {
 
     }
 
-    return (
+    return (<>
+        <Header />
         <div className='loginDesign'>
             {/* <pre>{JSON.stringify(credenciales, null, 2)}</pre> */}
             <CustomInput
@@ -112,5 +113,6 @@ export const Login = () => {
             {/* cuando hay un error al loggearse, muestra el mensaje de error definido en backend */}
             <div className="error">{msgError}</div> 
         </div>
+        </>
     )
 };

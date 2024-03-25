@@ -70,6 +70,8 @@ export const Profile = () => {
     }, [user])
 
     return (
+        <>
+        <Header />
         <div className='profileDesign'>
             {!loadedData
                 ? (<div>LOADING</div>) //toodo poner un gif cargando
@@ -121,5 +123,6 @@ export const Profile = () => {
 
             }
         </div>
+        </>
     )
 }

@@ -68,6 +68,8 @@ export const Register = () => {
     }
 
     return (
+        <>
+        <Header />
         <div className='registerDesign'>
             {/* para previsualizar lo que se esta metiendo en los campos */}
             {/* <pre>{JSON.stringify(user, null, 2)}</pre>  */}
@@ -127,5 +129,6 @@ export const Register = () => {
             />
             <div className="error">{msgError}</div>
         </div>
+        </>
     )
 }
