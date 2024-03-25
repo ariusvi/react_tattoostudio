@@ -17,7 +17,7 @@ export const Profile = () => {
 
     return (
         <div className='profileDesign'>
-            Soy la vista Profile
+            Soy el perfil de {datosUser.decodificado?.first_name}
         </div>
     )
 }
