@@ -10,6 +10,7 @@ export const Body = () => {
     return (
         <Routes>
             {/* aqui iran las vistas/pages*/}
+            {/* <Route path="*" element={<Navigate to={"/"} replace/>} /> */}
             <Route path="/" element={<Home/>} />
             <Route path="/register" element={<Register/>} />
             <Route path="/login" element={<Login/>} />

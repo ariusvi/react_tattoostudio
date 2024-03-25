@@ -3,17 +3,17 @@ import "./Profile.css"
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const {decodificado} = JSON.parse(localStorage.getItem("passport"))
+const datosUser = JSON.parse(localStorage.getItem("passport"));
 
 export const Profile = () => {
     const navigate = useNavigate()
-    const [token, setToken] = useState(decodificado?.token)
-    
+    const [tokenStorage, setTokenStorage] = useState(datosUser?.token)
+
     useEffect(()=> {
-        if(!token){
+        if(!tokenStorage){
             navigate("/")  //si no tienes token, te redirige al home
         }
-    }, [token])
+    }, [tokenStorage])
 
     return (
         <div className='profileDesign'>

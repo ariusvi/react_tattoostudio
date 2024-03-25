@@ -7,9 +7,13 @@ import { decodeToken } from "react-jwt";
 import { useNavigate } from "react-router-dom";
 import { validame } from '../../utils/functions';
 
+
+const datosUser = JSON.parse(localStorage.getItem("passport"));
+
 export const Login = () => {
 
     const navigate = useNavigate();
+    const [tokenStorage, setTokenStorage] = useState(datosUser?.token)
 
     const [credenciales, setCredenciales] = useState({ //el array con las credenciales actuales del usuario, la funcion que actualiza ese estado
         email: "",
@@ -22,6 +26,12 @@ export const Login = () => {
     }) //lanzar el mensaje de error
 
     const [msgError, setMsgError] = useState("");
+
+    useEffect(()=> {
+        if(tokenStorage){
+            navigate("/")  //todo corregir esto de por aqui, en teoria si tienes el token, deberia redirigirte al home, para que no vuelvas a loggearte
+        }
+    }, [tokenStorage])
 
     const inputHandler = (e) => {
         setCredenciales((prevState) => ({

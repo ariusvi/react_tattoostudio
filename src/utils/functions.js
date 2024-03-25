@@ -20,17 +20,16 @@ export const validame = (type, value) => {
             if (!emailRegex.test(value)) {
                 return "Por favor, el formato del email debe de ser correcto.";
             }
-
             return "";
 
         case "password":
 
-        if (value.length < 6) {
-            return "El apellido debe tener minimo 6 caracteres"
-        }
-        return "";
+            if (value.length < 6) {
+            return "El password debe tener minimo 6 caracteres"
+            }
+            return "";
 
         default:
             console.log("patatitas fritas");
     }
-}
+};
