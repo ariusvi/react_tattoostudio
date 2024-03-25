@@ -2,14 +2,17 @@ import "./Profile.css"
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getProfile } from "../../services/apiCalls";
+import { getProfile, updateProfile } from "../../services/apiCalls";
 import { CustomInput } from "../../Common/CustomInput/CustomInput";
 import { Header } from '../../Common/Header/Header';
+import { CustomButton } from "../../Common/CustomButton/CustomButton";
 
 
 export const Profile = () => {
     const datosUser = JSON.parse(localStorage.getItem("passport"));
     const navigate = useNavigate()
+
+    const [write, setWrite] = useState("disabled");
     const [tokenStorage, setTokenStorage] = useState(datosUser?.token);
     const [loadedData, setLoadadData] = useState(false);
     const [user, setUser] = useState({
@@ -57,58 +60,71 @@ export const Profile = () => {
                     email: fetched.data.email,          //todo revisar en el backend que todo esto se pueda modificar
                     // password: fetched.data.passwordHash, //todo la contraseña está hasheada
                 })
-                
+
             } catch (error) {
                 console.log(error);
             }
         }
 
-        if(!loadedData){
+        if (!loadedData) {
             getUserProfile()
         }
     }, [user])
 
+    const updateData = async () => {
+
+        try {
+            const fetched = await updateProfile (tokenStorage, user)
+
+            console.log(user, "patatas");
+            console.log(fetched, "boniato");
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+
     return (
         <>
-        <Header />
-        <div className='profileDesign'>
-            {!loadedData
-                ? (<div>LOADING</div>) //toodo poner un gif cargando
-                : (<div>
-                    <CustomInput
-                        className={`inputDesign ${userError.first_nameError !== "" ? "inputDesignError" : ""}`}
-                        type={"text"}
-                        name={"first_name"}
-                        value={user.first_name || ""}
-                        placeholder={"Name"}
-                        functionChange={(e) => inputHandler(e)}
-                        disabled={""}
-                        onBlurFunction={(e) => checkError(e)}
-                    />
+            <Header />
+            <div className='profileDesign'>
+                {!loadedData
+                    ? (<div>LOADING</div>) //toodo poner un gif cargando
+                    : (<div>
+                        <CustomInput
+                            className={`inputDesign ${userError.first_nameError !== "" ? "inputDesignError" : ""}`}
+                            type={"text"}
+                            name={"first_name"}
+                            value={user.first_name || ""}
+                            placeholder={"Name"}
+                            functionChange={(e) => inputHandler(e)}
+                            disabled={write}
+                            onBlurFunction={(e) => checkError(e)}
+                        />
 
-                    <CustomInput
-                        className={`inputDesign ${userError.last_nameError !== "" ? "inputDesignError" : ""}`}
-                        type={"text"}
-                        name={"last_name"}
-                        value={user.last_name || ""}
-                        placeholder={"Surname"}
-                        functionChange={(e) => inputHandler(e)}
-                        disabled={""}
-                        onBlurFunction={(e) => checkError(e)}
-                    />
+                        <CustomInput
+                            className={`inputDesign ${userError.last_nameError !== "" ? "inputDesignError" : ""}`}
+                            type={"text"}
+                            name={"last_name"}
+                            value={user.last_name || ""}
+                            placeholder={"Surname"}
+                            functionChange={(e) => inputHandler(e)}
+                            disabled={write}
+                            onBlurFunction={(e) => checkError(e)}
+                        />
 
-                    <CustomInput
-                        className={`inputDesign ${userError.emailError !== "" ? "inputDesignError" : ""}`}
-                        type="email"
-                        name="email"
-                        value={user.email || ""}
-                        placeholder="write your email"
-                        functionChange={inputHandler}
-                        disabled={""}
-                        onBlur={(e) => checkError(e)}
-                    />
+                        <CustomInput
+                            className={`inputDesign ${userError.emailError !== "" ? "inputDesignError" : ""}`}
+                            type="email"
+                            name="email"
+                            value={user.email || ""}
+                            placeholder="write your email"
+                            functionChange={inputHandler}
+                            disabled={write}
+                            onBlur={(e) => checkError(e)}
+                        />
 
-                    {/* <CustomInput
+                        {/* <CustomInput
                         className={`inputDesign ${userError.passwordError !== "" ? "inputDesignError" : ""}`}
                         type="password"
                         name="password"
@@ -118,10 +134,14 @@ export const Profile = () => {
                         disabled={""}
                         onBlur={(e) => checkError(e)}
                     /> */}
-                </div>)
-
-            }
-        </div>
+                    </div>)
+                }
+            <CustomButton
+                className={write === "" ? "CustomButtonDesignB CustomButtonDesign" : "CustomButtonDesign"}
+                title={write === "" ? "Confirm" : "Edit"}
+                functionEmit={write === "" ? () => updateData() : () => setWrite("")}
+            />
+            </div>
         </>
     )
 }

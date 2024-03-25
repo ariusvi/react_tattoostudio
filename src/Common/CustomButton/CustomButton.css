@@ -22,3 +22,11 @@
     transition: 0.2s;
     background-color: blueviolet;
 }
+
+.CustomButtonDesignB  {
+    background-color: darkkhaki;
+}
+
+.CustomButtonDesignB:hover  {
+    background-color:darkgoldenrod;
+}
