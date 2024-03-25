@@ -24,7 +24,6 @@ export const Login = () => {
     const [msgError, setMsgError] = useState("");
 
     const inputHandler = (e) => {
-
         setCredenciales((prevState) => ({
             ...prevState, 
             [e.target.name]: e.target.value 
