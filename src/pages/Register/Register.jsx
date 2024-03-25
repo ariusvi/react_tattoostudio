@@ -22,7 +22,6 @@ export const Register = () => {
         last_nameError: "",
         emailError: "",
         passwordError: "",
-
     });
 
     const [msgError, setMsgError] = useState("");

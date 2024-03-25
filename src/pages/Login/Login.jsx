@@ -88,7 +88,6 @@ export const Login = () => {
             {/* <pre>{JSON.stringify(credenciales, null, 2)}</pre> */}
             <CustomInput
                 className={`inputDesign ${credencialesError.emailError !== "" ? "inputDesignError" : ""}`}
-                // design="inputDesign"
                 type="email"
                 name="email"
                 value={credenciales.email || ""}
@@ -100,7 +99,6 @@ export const Login = () => {
             <div className="error">{credencialesError.emailError}</div>
             <CustomInput
                 className={`inputDesign ${credencialesError.passwordError !== "" ? "inputDesignError" : ""}`}
-                // design={credenciales.errores ? "inputDesign inputerror" : "inputDesign"} //todo
                 type="password"
                 name="password"
                 value={credenciales.password || ""}

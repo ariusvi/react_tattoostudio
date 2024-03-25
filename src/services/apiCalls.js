@@ -50,4 +50,30 @@ export const registerUser = async (user) => {
         return error
     }
 
-}
+};
+
+export const getProfile = async (token) => {
+
+    const options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Baerer ${token}`
+        },
+    };
+
+    try {
+    // users/profile
+    const response = await fetch(`${root}users/profile`, options)
+    const data = await response.json()
+        
+    if (!data.success) {
+        throw new Error (data.message)
+    }
+
+    return data;
+    } catch (error) {
+        return error
+    }
+
+};
