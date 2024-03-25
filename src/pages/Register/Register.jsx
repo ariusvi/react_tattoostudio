@@ -5,6 +5,7 @@ import { CustomButton } from "../../Common/CustomButton/CustomButton";
 import { registerUser } from "../../services/apiCalls";
 import { validame } from "../../utils/functions";
 import { useNavigate } from "react-router-dom";
+import { Header } from '../../Common/Header/Header';
 
 export const Register = () => {
 

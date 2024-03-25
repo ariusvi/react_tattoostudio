@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getProfile } from "../../services/apiCalls";
 import { CustomInput } from "../../Common/CustomInput/CustomInput";
+import { Header } from '../../Common/Header/Header';
 
 const datosUser = JSON.parse(localStorage.getItem("passport"));
 
@@ -51,13 +52,11 @@ export const Profile = () => {
                 setLoadadData(true)
 
                 setUser({
-                    first_name: fetched.data.firstName,
-                    last_name: fetched.data.lastName,
+                    first_name: fetched.data.first_name,
+                    last_name: fetched.data.last_name,
                     email: fetched.data.email,          //todo revisar en el backend que todo esto se pueda modificar
                     // password: fetched.data.passwordHash, //todo la contraseña está hasheada
                 })
-
-                console.log(fetched);
                 
             } catch (error) {
                 console.log(error);

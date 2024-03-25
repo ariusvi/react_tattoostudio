@@ -6,6 +6,7 @@ import { loginUser } from '../../services/apiCalls';
 import { decodeToken } from "react-jwt";
 import { useNavigate } from "react-router-dom";
 import { validame } from '../../utils/functions';
+import { Header } from '../../Common/Header/Header';
 
 
 const datosUser = JSON.parse(localStorage.getItem("passport"));
@@ -109,7 +110,8 @@ export const Login = () => {
                 onBlur={(e) => checkError (e)}
             />
             <div className="error">{credencialesError.passwordError}</div>
-            <div className="loginButton" onClick={logMe}>Log in</div>
+            <div className="loginButton" onClick={logMe}>Log in</div> 
+            {/* todo cambiar el boton a custom button */}
             {/* cuando hay un error al loggearse, muestra el mensaje de error definido en backend */}
             <div className="error">{msgError}</div> 
         </div>

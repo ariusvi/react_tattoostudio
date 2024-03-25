@@ -1,4 +1,5 @@
 import './Facilities.css'
+import { Header } from '../../Common/Header/Header';
 
 export const Facilities = () => {
 

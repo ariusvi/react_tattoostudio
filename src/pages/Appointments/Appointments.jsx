@@ -1,4 +1,5 @@
 import './Appointments.css'
+import { Header } from '../../Common/Header/Header';
 
 export const Appointments = () => {
 
