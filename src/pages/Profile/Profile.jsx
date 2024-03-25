@@ -15,14 +15,14 @@ export const Profile = () => {
         first_name: "",
         last_name: "",
         email: "",
-        password: "",
+        // password: "",
     });
 
     const [userError, setUserError] = useState({
         first_nameError: "",
         last_nameError: "",
         emailError: "",
-        passwordError: "",
+        // passwordError: "",
     });
 
     const inputHandler = (e) => {
@@ -45,19 +45,19 @@ export const Profile = () => {
     useEffect(() => {
 
         const getUserProfile = async () => {
-
             try {
                 const fetched = await getProfile(tokenStorage)
 
                 setLoadadData(true)
 
                 setUser({
-                    first_name: fetched.data.first_name,
-                    last_name: fetched.data.last_name,
+                    first_name: fetched.data.firstName,
+                    last_name: fetched.data.lastName,
                     email: fetched.data.email,          //todo revisar en el backend que todo esto se pueda modificar
-                    password: fetched.data.password,
+                    // password: fetched.data.passwordHash, //todo la contraseña está hasheada
                 })
 
+                console.log(fetched);
                 
             } catch (error) {
                 console.log(error);
@@ -67,7 +67,6 @@ export const Profile = () => {
         if(!loadedData){
             getUserProfile()
         }
-
     }, [user])
 
     return (
@@ -108,7 +107,7 @@ export const Profile = () => {
                         onBlur={(e) => checkError(e)}
                     />
 
-                    <CustomInput
+                    {/* <CustomInput
                         className={`inputDesign ${userError.passwordError !== "" ? "inputDesignError" : ""}`}
                         type="password"
                         name="password"
@@ -117,7 +116,7 @@ export const Profile = () => {
                         functionChange={inputHandler}
                         disabled={""}
                         onBlur={(e) => checkError(e)}
-                    />
+                    /> */}
                 </div>)
 
             }
