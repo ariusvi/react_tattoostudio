@@ -10,6 +10,7 @@ import { validame } from '../../utils/functions';
 export const Login = () => {
 
     const navigate = useNavigate();
+
     const [credenciales, setCredenciales] = useState({ //el array con las credenciales actuales del usuario, la funcion que actualiza ese estado
         email: "",
         password: "",
@@ -49,10 +50,10 @@ export const Login = () => {
 
             const fetched = await loginUser(credenciales)
 
-            if (!fetched.success) {
-                setMsgError(fetched.message)
-                return;
-            }
+            // if (!fetched.success) {
+            //     setMsgError(fetched.message)
+            //     return;
+            // }
 
             // if (!fetched.token) {
             //     return              //todo terminar esto
@@ -65,11 +66,11 @@ export const Login = () => {
                 decodificado: decodificado,
             }
 
-            sessionStorage.setItem("passport", JSON.stringify(passport))
+            localStorage.setItem("passport", JSON.stringify(passport))
             
             setMsgError(`Bienvenido ${decodificado.first_name}`)
 
-            setTimeout(() => { navigate("/profile") }, 750)
+            setTimeout(() => { navigate("/") }, 2000) //redirige al home
 
     }
 
