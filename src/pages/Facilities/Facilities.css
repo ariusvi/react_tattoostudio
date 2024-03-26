@@ -5,7 +5,49 @@
     background-color:indianred;
 
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardRoster {
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cardDesign {
+
+    height: 25em;
+    width: 14em;
+
+    border-radius: 0.5em;
+
+    background-color: cadetblue;
+
+    transition: 0.5s;
+
+    margin: 0.5em;
+
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.cardDesign:hover{
+    transition: 0.5s;
+
+    background-color:lightseagreen;
+    cursor: pointer;
+}
+
+.cardTitle{
+    font-size: 1.25em;
+    font-weight: bold;
+    color: white;
+    margin: 1em;
 }

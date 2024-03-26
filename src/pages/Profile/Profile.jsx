@@ -15,18 +15,17 @@ export const Profile = () => {
     const [write, setWrite] = useState("disabled");
     const [tokenStorage, setTokenStorage] = useState(datosUser?.token);
     const [loadedData, setLoadedData] = useState(false);
+    
     const [user, setUser] = useState({
         first_name: "",
         last_name: "",
         email: "",
-        // password: "",
     });
 
     const [userError, setUserError] = useState({
         first_nameError: "",
         last_nameError: "",
         emailError: "",
-        // passwordError: "",
     });
 
     const inputHandler = (e) => {
@@ -124,17 +123,6 @@ export const Profile = () => {
                             disabled={write}
                             onBlur={(e) => checkError(e)}
                         />
-
-                        {/* <CustomInput
-                        className={`inputDesign ${userError.passwordError !== "" ? "inputDesignError" : ""}`}
-                        type="password"
-                        name="password"
-                        value={user.password || ""}
-                        placeholder="write your password"
-                        functionChange={inputHandler}
-                        disabled={""}
-                        onBlur={(e) => checkError(e)}
-                    /> */}
                     </div>)
                 }
                 <CustomButton
