@@ -14,7 +14,7 @@ export const Profile = () => {
 
     const [write, setWrite] = useState("disabled");
     const [tokenStorage, setTokenStorage] = useState(datosUser?.token);
-    const [loadedData, setLoadadData] = useState(false);
+    const [loadedData, setLoadedData] = useState(false);
     const [user, setUser] = useState({
         first_name: "",
         last_name: "",
@@ -52,7 +52,7 @@ export const Profile = () => {
             try {
                 const fetched = await getProfile(tokenStorage)
 
-                setLoadadData(true)
+                setLoadedData(true)
 
                 setUser({
                     first_name: fetched.data.firstName,
@@ -74,14 +74,18 @@ export const Profile = () => {
     const updateData = async () => {
 
         try {
-            const fetched = await updateProfile (tokenStorage, user)
-
-            console.log(user, "patatas");
-            console.log(fetched, "boniato");
+            const fetched = await updateProfile(tokenStorage.userId, user)
+            // const fetched = await updateProfile(datosUser.userId, user)
+            setUser({
+                first_name: fetched.data.firstName,
+                last_name: fetched.data.lastName,
+                email: fetched.data.email,          //todo aqui tengo algun error
+            })
+            console.log(first_name, "patatita");
+            setWrite("disabled")
         } catch (error) {
             console.log(error);
         }
-
     }
 
     return (
@@ -136,11 +140,11 @@ export const Profile = () => {
                     /> */}
                     </div>)
                 }
-            <CustomButton
-                className={write === "" ? "CustomButtonDesignB CustomButtonDesign" : "CustomButtonDesign"}
-                title={write === "" ? "Confirm" : "Edit"}
-                functionEmit={write === "" ? () => updateData() : () => setWrite("")}
-            />
+                <CustomButton
+                    className={write === "" ? "CustomButtonDesignB CustomButtonDesign" : "CustomButtonDesign"}
+                    title={write === "" ? "Confirm" : "Edit"}
+                    functionEmit={write === "" ? () => updateData() : () => setWrite("")}
+                />
             </div>
         </>
     )

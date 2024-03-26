@@ -80,7 +80,7 @@ export const Login = () => {
             
             setMsgError(`Bienvenido ${decodificado.first_name}`)
 
-            setTimeout(() => { navigate("/") }, 2000) //redirige al home
+            setTimeout(() => { navigate("/") }, 1000) //redirige al home
 
     }
 
