@@ -11,15 +11,15 @@ export const loginUser = async (credenciales) => {
     };
 
     try {
-    // auth/login
-    const response = await fetch(`${root}auth/login`, options)
-    const data = await response.json()
-        
-    if (!data.success) {
-        throw new Error (data.message)
-    }
+        // auth/login
+        const response = await fetch(`${root}auth/login`, options)
+        const data = await response.json()
 
-    return data;
+        if (!data.success) {
+            throw new Error(data.message)
+        }
+
+        return data;
     } catch (error) {
         return error
     }
@@ -37,15 +37,15 @@ export const registerUser = async (user) => {
     };
 
     try {
-    // auth/register
-    const response = await fetch(`${root}auth/register`, options)
-    const data = await response.json()
-        
-    if (!data.success) {
-        throw new Error (data.message)
-    }
+        // auth/register
+        const response = await fetch(`${root}auth/register`, options)
+        const data = await response.json()
 
-    return data;
+        if (!data.success) {
+            throw new Error(data.message)
+        }
+
+        return data;
     } catch (error) {
         return error
     }
@@ -63,15 +63,15 @@ export const getProfile = async (token) => {
     };
 
     try {
-    // users/profile
-    const response = await fetch(`${root}users/profile`, options)
-    const data = await response.json()
-        
-    if (!data.success) {
-        throw new Error (data.message)
-    }
+        // users/profile
+        const response = await fetch(`${root}users/profile`, options)
+        const data = await response.json()
 
-    return data;
+        if (!data.success) {
+            throw new Error(data.message)
+        }
+
+        return data;
     } catch (error) {
         return error
     }
@@ -79,28 +79,51 @@ export const getProfile = async (token) => {
 };
 
 export const updateProfile = async (token, newData) => {
-console.log(newData);
+
     const options = {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
             "Authorization": `Baerer ${token}`
         },
-        body: JSON.stringify(newData), 
+        body: JSON.stringify(newData),
     };
 
     try {
-    // users/profile
-    const response = await fetch(`${root}users/profile`, options)
-    const data = await response.json()
-        
-    if (!data.success) {
-        throw new Error (data.message)
-    }
+        // users/profile
+        const response = await fetch(`${root}users/profile`, options)
+        const data = await response.json()
 
-    return data.data; //devuelve el usuario
+        if (!data.success) {
+            throw new Error(data.message)
+        }
+
+        return data.data; //devuelve el usuario
     } catch (error) {
         return error
     }
+};
 
+export const getFacilities = async () => {
+
+    const options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    };
+
+    try {
+        // services
+        const response = await fetch(`${root}services`, options);
+        const data = await response.json();
+
+        if (!data.success) {
+            throw new Error(data.message);
+        }
+
+        return data;
+    } catch (error) {
+        return error;
+    }
 };
