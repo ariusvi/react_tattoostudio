@@ -57,8 +57,7 @@ export const Profile = () => {
                 setUser({
                     first_name: fetched.data.firstName,
                     last_name: fetched.data.lastName,
-                    email: fetched.data.email,          //todo revisar en el backend que todo esto se pueda modificar
-                    // password: fetched.data.passwordHash, //todo la contraseña está hasheada
+                    email: fetched.data.email,          
                 })
 
             } catch (error) {
@@ -74,17 +73,15 @@ export const Profile = () => {
     const updateData = async () => {
 
         try {
-            const fetched = await updateProfile(tokenStorage.userId, user)
-            // const fetched = await updateProfile(datosUser.userId, user)
+            const fetched = await updateProfile(tokenStorage, user)
             setUser({
-                first_name: fetched.data.firstName,
-                last_name: fetched.data.lastName,
-                email: fetched.data.email,          //todo aqui tengo algun error
+                first_name: fetched.firstName,
+                last_name: fetched.lastName,
+                email: fetched.email,          
             })
-            console.log(first_name, "patatita");
             setWrite("disabled")
         } catch (error) {
-            console.log(error);
+            console.log(error.message);
         }
     }
 

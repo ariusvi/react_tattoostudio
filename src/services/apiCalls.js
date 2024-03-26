@@ -78,15 +78,15 @@ export const getProfile = async (token) => {
 
 };
 
-export const updateProfile = async (token, data) => {
-
+export const updateProfile = async (token, newData) => {
+console.log(newData);
     const options = {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
             "Authorization": `Baerer ${token}`
         },
-        body: JSON.stringify(data), 
+        body: JSON.stringify(newData), 
     };
 
     try {
@@ -98,7 +98,7 @@ export const updateProfile = async (token, data) => {
         throw new Error (data.message)
     }
 
-    return data;
+    return data.data; //devuelve el usuario
     } catch (error) {
         return error
     }
