@@ -130,12 +130,24 @@ export const getFacilities = async () => {
 
 export const getAppointments = async (token) => {
 
+        const response = await fetch(root + "appointments", {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+        return response.json();
+    }
+
+export const createAppointments = async (token, appointmentsData) => {
+
     const options = {
-        method: "GET",
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`
         },
+        body: JSON.stringify(appointmentsData)
     };
 
     try {

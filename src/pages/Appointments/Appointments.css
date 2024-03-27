@@ -21,11 +21,29 @@
     background-color: #12120E;
     color: white;
 
-    transition: 0.5s;
-
     margin: 0.5em;
     padding: 1.1em;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cardAppointmentsTitle{
+    font-family: "notable", sans-serif;
+    font-size: 1.15em;
+
+    min-height: 4em;
+    width: 14em;
+
+    border-radius: 0.5em;
+
+    background-color: #12120E;
+    color: white;
+    margin: 1em;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
