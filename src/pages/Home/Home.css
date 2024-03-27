@@ -1,9 +1,9 @@
 .homeDesign {
-    height: 76vh;
-    width: 100vw;
+    min-height: 76vh;
+    min-width: 100vw;
 
-    background-color:mediumpurple;
-
+    background-color:#9D9D9D;
+    color: white;
 
     display: flex;
     flex-direction: column;

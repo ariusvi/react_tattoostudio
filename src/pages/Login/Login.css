@@ -1,35 +1,12 @@
 .loginDesign {
-    height: 76vh;
-    width: 100vw;
+    min-height: 76vh;
+    min-width: 100vw;
 
-    background-color:darkkhaki;
+    background-color:#9D9D9D;
+    color: white;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-.loginButton{
-    height: 2.5em;
-    width: 10em;
-    background-color:lightseagreen;
-    border-radius: 0.5em;
-    transition: 0.4s;
-
-    font-style: bold;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin: 1em;
-}
-
-.loginButton:hover{
-    cursor: pointer;
-    background-color:lightskyblue;
-    border-radius: 0.5em;
-    transition: 0.4s;
-}
-

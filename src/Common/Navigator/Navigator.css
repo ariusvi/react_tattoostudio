@@ -8,7 +8,7 @@
 }
 
 .navigatorDesign:hover {
-    color: grey;
+    color: #F7F700;
     transition: 0.2s;
     cursor: pointer;
 }

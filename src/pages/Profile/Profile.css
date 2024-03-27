@@ -1,8 +1,9 @@
 .profileDesign {
-    height: 76vh;
-    width: 100vw;
+    min-height: 76vh;
+    min-width: 100vw;
 
-    background-color:cornflowerblue;
+    background-color:#9D9D9D;
+    color: white;
 
 
     display: flex;

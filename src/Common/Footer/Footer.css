@@ -1,8 +1,9 @@
 .footerDesign {
-    height: 12vh;
-    width: 100vw;
+    min-height: 16vh;
+    min-width: 100vw;
 
-    background-color:cadetblue;
+    background-color:#090907;
+    color: white;
 
     display: flex;
     flex-direction: column;

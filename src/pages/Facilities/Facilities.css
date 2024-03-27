@@ -1,8 +1,9 @@
 .facilitiesDesign {
-    height: 76vh;
-    width: 100vw;
+    min-height: 76vh;
+    min-width: 100vw;
 
-    background-color:indianred;
+    background-color:#9D9D9D;
+    color: white;
 
     display: flex;
     flex-direction: row;
@@ -11,8 +12,8 @@
 }
 
 .cardRoster {
-    height: 50vh;
-    width: 100vw;
+    min-height: 50vh;
+    min-width: 90vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,11 +27,12 @@
 
     border-radius: 0.5em;
 
-    background-color: cadetblue;
+    background-color: #12120E;
 
     transition: 0.5s;
 
     margin: 0.5em;
+    padding: 1.1em;
 
     display: flex;
     flex-direction: column;
@@ -38,16 +40,16 @@
     align-items: center;
 }
 
-.cardDesign:hover{
+/* .cardDesign:hover{
     transition: 0.5s;
 
     background-color:lightseagreen;
     cursor: pointer;
-}
+} */
 
 .cardTitle{
-    font-size: 1.25em;
-    font-weight: bold;
+    font-family: "notable", sans-serif;
+    font-size: 1.15em;
     color: white;
     margin: 1em;
 }
