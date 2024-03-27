@@ -125,13 +125,19 @@ export const Profile = () => {
                         />
                     </div>)
                 }
+                
                 <CustomButton
                     className={write === "" ? "CustomButtonDesignB CustomButtonDesign" : "CustomButtonDesign"}
                     title={write === "" ? "Confirm" : "Edit"}
                     functionEmit={write === "" ? () => updateData() : () => setWrite("")}
                 />
-                
-            </div>
+                <CustomButton 
+                    className={"CustomButtonDesign"}
+                    title={"Appointments"}
+                    functionEmit={() => navigate("/appointments")}
+                />
+                </div>
+            
         </>
     )
 }
