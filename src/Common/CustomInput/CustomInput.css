@@ -21,3 +21,20 @@
     transition: 0.3s;
     box-shadow: 0 0 6px #F7F700, 0 0 20px #F7F700, 0 0 30px #F7F700, 0 0 40px #F7F700;
 }
+
+.inputAppointmentsDesign{
+    height: 3em;
+    width: 18em;
+
+    border-radius: 0.5em;
+    color:white;
+    border: 0.2em solid #F7F700;
+    background-color: #9d9d9d;
+    margin: 1em;
+}
+
+.inputAppointmentsDesign:hover {
+    transition: 0.3s;
+    box-shadow: 0 0 6px #F7F700, 0 0 20px #F7F700, 0 0 30px #F7F700, 0 0 40px #F7F700;
+}
+

@@ -5,7 +5,6 @@ import { Header } from '../../Common/Header/Header';
 import { getFacilities } from '../../services/apiCalls';
 
 
-
 export const Facilities = () => {
     const [facilities, setFacilities] = useState([])
 

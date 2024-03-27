@@ -130,6 +130,7 @@ export const Profile = () => {
                     title={write === "" ? "Confirm" : "Edit"}
                     functionEmit={write === "" ? () => updateData() : () => setWrite("")}
                 />
+                
             </div>
         </>
     )

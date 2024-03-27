@@ -1,8 +1,30 @@
 .appointmentsDesign {
-    height: 76vh;
-    width: 100vw;
+    min-height: 76vh;
+    min-width: 100vw;
 
-    background-color:darksalmon;
+    background-color:#9D9D9D;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardAppointments {
+
+    min-height: 4em;
+    width: 14em;
+
+    border-radius: 0.5em;
+
+    background-color: #12120E;
+    color: white;
+
+    transition: 0.5s;
+
+    margin: 0.5em;
+    padding: 1.1em;
 
     display: flex;
     flex-direction: column;

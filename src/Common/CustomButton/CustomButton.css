@@ -29,3 +29,28 @@
     transition: 0.3s;
     box-shadow: 0 0 6px #F7F700, 0 0 20px #F7F700, 0 0 30px #F7F700, 0 0 40px #F7F700;
 }
+
+.customButtonDesignAppointments{
+    height: 4em;
+    width: 10em;
+
+    border-radius: 0.5em;
+    margin: 1em;
+
+    background-color:#F7F700;
+    color: black;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s;
+    margin-top: 2em;
+}
+
+.customButtonDesignAppointments:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 6px #F7F700, 0 0 20px #F7F700, 0 0 30px #F7F700, 0 0 40px #F7F700;
+}
