@@ -3,6 +3,7 @@ import './Appointments.css'
 import { Header } from '../../Common/Header/Header';
 import { useState, useEffect } from "react";
 import { getAppointments } from '../../services/apiCalls';
+import dayjs from 'dayjs';
 
 
 export const Appointments = () => {
@@ -34,10 +35,11 @@ export const Appointments = () => {
                 <div className='cardAppointments'>
                     {
                         appointments.map(appointment => {
+                            const formattedDate = dayjs(appointment.dateAppointment).format('DD/MM/YYYY');
                             return (
                                 <div key={appointment.id} className='cardAppointmentsDesign'>
-                                    <div>{appointment.dateAppointment}</div>
                                     <div>{appointment.service.serviceName}</div>
+                                    <div>{formattedDate}</div>
                                 </div>
                             )
                         })
