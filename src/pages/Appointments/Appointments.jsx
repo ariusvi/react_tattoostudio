@@ -87,22 +87,24 @@ export const Appointments = () => {
                 />
                 </div>
                     <div className='cardAppointmentsTitle'>Mis Citas</div>
-                <div className='cardAppointments'>
+                
                     {
                         (appointments.length > 0)? 
                             appointments.map(appointment => {
                                 const formattedDate = dayjs(appointment.dateAppointment).format('DD/MM/YYYY');
                                 return (
                                     <div key={appointment.id} className='cardAppointmentsDesign'>
+                                        <div className='cardAppointments'>
                                         <div>{appointment.service.serviceName}</div>
                                         <div>{formattedDate}</div>
+                                        </div>
                                     </div>
                                 )
                             })
                         : null
                         }
                 </div>
-            </div>
+            
         </>
         
     )
