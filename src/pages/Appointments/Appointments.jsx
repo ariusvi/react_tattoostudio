@@ -11,9 +11,9 @@ import { CustomButton } from '../../Common/CustomButton/CustomButton';
 export const Appointments = () => {
     const datosUser = JSON.parse(localStorage.getItem("passport"));
     const [appointments, setAppointments] = useState([])
-    
+
     const [tokenStorage, setTokenStorage] = useState(datosUser?.token)
-    
+
 
     const [appointmentsData, setAppointmentsData] = useState({
         dateAppointment: "",
@@ -49,11 +49,11 @@ export const Appointments = () => {
                 dateAppointment: data.dateAppointment,
                 serviceId: data.service,
             })
-            }catch (error) {
+        } catch (error) {
             console.log(error);
         }
     }
-    
+
     console.log(appointmentsData);
 
     return (
@@ -62,50 +62,50 @@ export const Appointments = () => {
             <div className='appointmentsDesign'>
                 <div className='cardAppointmentsTitle'>Nueva Cita</div>
                 <div className='cardAppointments'>
-                <CustomInput 
-                    className={'inputAppointmentsDesign'}
-                    type={'date'}
-                    name={'dateAppointment'}
-                    value={appointmentsData.dateAppointment || ""}
-                    placeholder={"DD/MM/YYYY"}
-                    functionChange={appointmentInputHandler}
-                    disabled={""}
-                />
-                <CustomInput 
-                    className={'inputAppointmentsDesign'}
-                    type={'text'}
-                    name={'serviceId'}
-                    value={appointmentsData.serviceId || ""}
-                    placeholder={"service_id"}
-                    functionChange={appointmentInputHandler}
-                    disabled={""}
-                />
-                <CustomButton 
-                    className={'customButtonDesignAppointments'}
-                    title={'Crear Cita'}
-                    functionEmit={newAppointment}
-                />
+                    <CustomInput
+                        className={'inputAppointmentsDesign'}
+                        type={'date'}
+                        name={'dateAppointment'}
+                        value={appointmentsData.dateAppointment || ""}
+                        placeholder={"DD/MM/YYYY"}
+                        functionChange={appointmentInputHandler}
+                        disabled={""}
+                    />
+                    <CustomInput
+                        className={'inputAppointmentsDesign'}
+                        type={'text'}
+                        name={'serviceId'}
+                        value={appointmentsData.serviceId || ""}
+                        placeholder={"service_id"}
+                        functionChange={appointmentInputHandler}
+                        disabled={""}
+                    />
+                    <CustomButton
+                        className={'customButtonDesignAppointments'}
+                        title={'Crear Cita'}
+                        functionEmit={newAppointment}
+                    />
                 </div>
-                    <div className='cardAppointmentsTitle'>Mis Citas</div>
-                
-                    {
-                        (appointments.length > 0)? 
-                            appointments.map(appointment => {
-                                const formattedDate = dayjs(appointment.dateAppointment).format('DD/MM/YYYY');
-                                return (
-                                    <div key={appointment.id} className='cardAppointmentsDesign'>
-                                        <div className='cardAppointments'>
+                <div className='cardAppointmentsTitle'>Mis Citas</div>
+                {
+                    (appointments.length > 0) ?
+                        appointments.map(appointment => {
+                            const formattedDate = dayjs(appointment.dateAppointment).format('DD/MM/YYYY');
+                            return (
+                                <div key={appointment.id} className='cardAppointmentsDesign'>
+                                    <div className='cardAppointments'>
                                         <div>{appointment.service.serviceName}</div>
                                         <div>{formattedDate}</div>
-                                        </div>
+                                        <div>DELETE APPOINTMENT</div>
                                     </div>
-                                )
-                            })
+                                </div>
+                            )
+                        })
                         : null
-                        }
-                </div>
-            
+                }
+            </div>
+
         </>
-        
+
     )
 }

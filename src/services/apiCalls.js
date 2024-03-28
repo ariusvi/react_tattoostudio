@@ -130,7 +130,7 @@ export const getFacilities = async () => {
 
 export const getAppointments = async (token) => {
 
-        const response = await fetch(root + "appointments", {
+        const response = await fetch(`${root}`+ "appointments", {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`,
