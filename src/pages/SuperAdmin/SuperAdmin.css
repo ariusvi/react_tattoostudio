@@ -1,0 +1,15 @@
+.superAdminDesign {
+    min-height: 76vh;
+    min-width: 100vw;
+
+    background-color: #9d9d9d;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em; */
+    justify-content: center;
+    align-items: center;
+}

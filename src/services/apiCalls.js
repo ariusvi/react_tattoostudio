@@ -130,14 +130,14 @@ export const getFacilities = async () => {
 
 export const getAppointments = async (token) => {
 
-        const response = await fetch(`${root}`+ "appointments", {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        });
-        return response.json();
-    }
+    const response = await fetch(`${root}` + "appointments", {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    });
+    return response.json();
+}
 
 export const createAppointments = async (token, appointmentsData) => {
 
@@ -171,9 +171,9 @@ export const deleteAppointments = async (token, appointmentId) => {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`  
+            "Authorization": `Bearer ${token}`
         },
-        body: JSON.stringify({appointmentId})
+        body: JSON.stringify({ appointmentId })
     }
 
     try {
@@ -185,6 +185,31 @@ export const deleteAppointments = async (token, appointmentId) => {
         }
 
         return data
+    } catch (error) {
+        return error
+    }
+};
+
+export const getUsers = async (token) => {
+
+    const options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+        },
+    }
+
+    try {
+        const response = await fetch(`${root}users`, options)
+        const data = await response.json()
+
+        if (!data.success) {
+            throw new Error(data.message)
+        }
+
+        return data
+
     } catch (error) {
         return error
     }
