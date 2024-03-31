@@ -2,7 +2,7 @@ import './Appointments.css'
 
 import { Header } from '../../Common/Header/Header';
 import { useState, useEffect } from "react";
-import { createAppointments, getAppointments } from '../../services/apiCalls';
+import { createAppointments, deleteAppointments, getAppointments } from '../../services/apiCalls';
 import dayjs from 'dayjs';
 import { CustomInput } from '../../Common/CustomInput/CustomInput';
 import { CustomButton } from '../../Common/CustomButton/CustomButton';
@@ -54,7 +54,18 @@ export const Appointments = () => {
         }
     }
 
-    console.log(appointmentsData);
+const deleteAppointment = async (appointmentId) => {
+    try {
+        const response = await deleteAppointments(tokenStorage, appointmentId)
+        const data = response.data
+        setAppointmentsData({
+            dateAppointment: data.dateAppointment,
+            serviceId: data.service,
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}
 
     return (
         <>
@@ -81,7 +92,7 @@ export const Appointments = () => {
                         disabled={""}
                     />
                     <CustomButton
-                        className={'customButtonDesignAppointments'}
+                        className={'CustomButtonDesign'}
                         title={'Crear Cita'}
                         functionEmit={newAppointment}
                     />
@@ -96,7 +107,11 @@ export const Appointments = () => {
                                     <div className='cardAppointments'>
                                         <div>{appointment.service.serviceName}</div>
                                         <div>{formattedDate}</div>
-                                        <div>DELETE APPOINTMENT</div>
+                                        <CustomButton
+                                        className={'CustomButtonDesignDelete'}
+                                        title={'Eliminar cita'}
+                                        functionEmit={() => deleteAppointment(appointment.id)}
+                                        />
                                     </div>
                                 </div>
                             )
