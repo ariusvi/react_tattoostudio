@@ -99,6 +99,8 @@ export const Profile = () => {
                             color="yellow"
                         ></l-grid></div>) 
                     : (<div>
+                        
+                        Nombre:
                         <CustomInput
                             className={`inputDesign ${userError.first_nameError !== "" ? "inputDesignError" : ""}`}
                             type={"text"}
@@ -110,6 +112,7 @@ export const Profile = () => {
                             onBlurFunction={(e) => checkError(e)}
                         />
 
+                        Apellido:
                         <CustomInput
                             className={`inputDesign ${userError.last_nameError !== "" ? "inputDesignError" : ""}`}
                             type={"text"}
@@ -121,6 +124,7 @@ export const Profile = () => {
                             onBlurFunction={(e) => checkError(e)}
                         />
 
+                        Email:
                         <CustomInput
                             className={`inputDesign ${userError.emailError !== "" ? "inputDesignError" : ""}`}
                             type="email"
