@@ -1,5 +1,5 @@
 .facilitiesDesign {
-    min-height: 76vh;
+    min-height: 66vh;
     min-width: 98vw;
 
     background-color:#9D9D9D;
@@ -40,16 +40,23 @@
     align-items: center;
 }
 
-/* .cardDesign:hover{
-    transition: 0.5s;
-
-    background-color:lightseagreen;
-    cursor: pointer;
-} */
-
 .cardTitle{
     font-family: "notable", sans-serif;
     font-size: 1.15em;
     color: white;
     margin: 1em;
+}
+
+.facilitiesTitle{
+    height: 10vh;
+    min-width: 98vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "notable", sans-serif;
+    font-size: 2em;
+    color: #F7F700;
+    background-color: #616161;
 }

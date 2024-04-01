@@ -89,6 +89,7 @@ export const Profile = () => {
     return (
         <>
             <Header />
+            <div className='profileTitle'>Perfil</div>
             <div className='profileDesign'>
                 {!loadedData
                     ? (<div>

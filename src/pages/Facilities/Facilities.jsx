@@ -23,6 +23,7 @@ export const Facilities = () => {
     return (
         <>
             <Header />
+            <div className='facilitiesTitle'>Nuestros Servicios</div>
             <div className='facilitiesDesign'>
             <div className='cardRoster'>
                 {
@@ -31,6 +32,7 @@ export const Facilities = () => {
                             <div key={facility.id} className='cardDesign'>
                                 <div className='cardTitle'>{facility.serviceName}</div>
                                 <div>{facility.description}</div>
+                                <div>Número del serivicio: {facility.id}</div>
                             </div>
                         )
                     })
@@ -41,12 +43,3 @@ export const Facilities = () => {
 )
 }
 
-
-import { CustomDropdown } from '../../Common/CustomDropdown/CustomDropdown';
-            {/* 
-                <CustomDropdown
-                title="Servicios"
-                items={["patata", "queso", "fresa"]}
-                    />
-            */}
-            {/* usar esto en otra parte */}

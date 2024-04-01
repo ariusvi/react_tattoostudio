@@ -1,5 +1,5 @@
 .appointmentsDesign {
-    min-height: 76vh;
+    min-height: 66vh;
     min-width: 98vw;
 
     background-color:#9D9D9D;
@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .cardAppointments {
@@ -49,4 +50,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.appointmentsTitle{
+    height: 10vh;
+    min-width: 98vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "notable", sans-serif;
+    font-size: 2em;
+    color: #F7F700;
+    background-color: #616161;
 }

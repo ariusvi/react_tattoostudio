@@ -78,8 +78,10 @@ export const Login = () => {
 
     return (<>
         <Header />
+        <div className='loginTitle'>Login</div>
         <div className='loginDesign'>
             {/* <pre>{JSON.stringify(credenciales, null, 2)}</pre> */}
+            email:
             <CustomInput
                 className={`inputDesign ${credencialesError.emailError !== "" ? "inputDesignError" : ""}`}
                 type="email"
@@ -91,6 +93,7 @@ export const Login = () => {
                 onBlur={(e) => checkError (e)}
             />
             <div className="error">{credencialesError.emailError}</div>
+            contraseña:
             <CustomInput
                 className={`inputDesign ${credencialesError.passwordError !== "" ? "inputDesignError" : ""}`}
                 type="password"

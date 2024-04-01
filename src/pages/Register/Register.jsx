@@ -70,9 +70,11 @@ export const Register = () => {
     return (
         <>
             <Header />
+            <div className='registerTitle'>Registro</div>
             <div className='registerDesign'>
                 {/* para previsualizar lo que se esta metiendo en los campos */}
                 {/* <pre>{JSON.stringify(user, null, 2)}</pre>  */}
+                Nombre:
                 <CustomInput
                     className={`inputDesign ${userError.first_nameError !== "" ? "inputDesignError" : ""}`}
                     type={"text"}
@@ -84,7 +86,7 @@ export const Register = () => {
                     onBlurFunction={(e) => checkError(e)}
                 />
                 <div className="error">{userError.first_nameError}</div>
-
+                Apellido:
                 <CustomInput
                     className={`inputDesign ${userError.last_nameError !== "" ? "inputDesignError" : ""}`}
                     type={"text"}
@@ -96,7 +98,7 @@ export const Register = () => {
                     onBlurFunction={(e) => checkError(e)}
                 />
                 <div className="error">{userError.last_nameError}</div>
-
+                Email:
                 <CustomInput
                     className={`inputDesign ${userError.emailError !== "" ? "inputDesignError" : ""}`}
                     type={"email"}
@@ -108,7 +110,7 @@ export const Register = () => {
                     onBlurFunction={(e) => checkError(e)}
                 />
                 <div className="error">{userError.emailError}</div>
-
+                Contraseña:
                 <CustomInput
                     className={`inputDesign ${userError.passwordError !== "" ? "inputDesignError" : ""}`}
                     type={"password"}

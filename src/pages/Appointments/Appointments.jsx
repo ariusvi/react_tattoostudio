@@ -54,24 +54,24 @@ export const Appointments = () => {
         }
     }
 
-const deleteAppointment = async (appointmentId) => {
-    try {
-        const response = await deleteAppointments(tokenStorage, appointmentId)
-        const data = response.data
-        setAppointmentsData({
-            dateAppointment: data.dateAppointment,
-            serviceId: data.service,
-        })
-    } catch (error) {
-        console.log(error);
+    const deleteAppointment = async (appointmentId) => {
+        try {
+            const response = await deleteAppointments(tokenStorage, appointmentId)
+            const data = response.data
+            setAppointmentsData({
+                dateAppointment: data.dateAppointment,
+                serviceId: data.service,
+            })
+        } catch (error) {
+            console.log(error);
+        }
     }
-}
 
     return (
         <>
             <Header />
+            <div className='appointmentsTitle'>Nueva Cita</div>
             <div className='appointmentsDesign'>
-                <div className='cardAppointmentsTitle'>Nueva Cita</div>
                 <div className='cardAppointments'>
                     <CustomInput
                         className={'inputAppointmentsDesign'}
@@ -97,7 +97,8 @@ const deleteAppointment = async (appointmentId) => {
                         functionEmit={newAppointment}
                     />
                 </div>
-                <div className='cardAppointmentsTitle'>Mis Citas</div>
+                
+                <div className='appointmentsTitle'>Mis citas</div>
                 {
                     (appointments.length > 0) ?
                         appointments.map(appointment => {
@@ -108,9 +109,9 @@ const deleteAppointment = async (appointmentId) => {
                                         <div>{appointment.service.serviceName}</div>
                                         <div>{formattedDate}</div>
                                         <CustomButton
-                                        className={'CustomButtonDesignDelete'}
-                                        title={'Eliminar cita'}
-                                        functionEmit={() => deleteAppointment(appointment.id)}
+                                            className={'CustomButtonDesignDelete'}
+                                            title={'Eliminar cita'}
+                                            functionEmit={() => deleteAppointment(appointment.id)}
                                         />
                                     </div>
                                 </div>
