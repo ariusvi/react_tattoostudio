@@ -183,6 +183,7 @@ Loading gif created with [ldrs library](https://uiball.com/ldrs/)
 - Allow super admin to create and modify services
 - Responsive design
 - Deploy backend and frontend
+- Design a footer
 
 # Author ✒️
 * Ana Rius 
