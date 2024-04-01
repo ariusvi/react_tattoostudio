@@ -28,11 +28,11 @@ export const Header = () => {
                     // si token es false, muestra otro tipo de botones
                     <div className="menu">
                         <CustomLink title={"Login"} destination={"/login"} />
-                        <CustomLink title={"Register"} destination={"/register"} />
+                        <CustomLink title={"Registro"} destination={"/register"} />
 
                     </div>)
             }
-            <CustomLink title="Services" destination="/facilities" />
+            <CustomLink title="Servicios" destination="/facilities" />
             {/* <CustomLink title="Login" destination="/login" /> */}
         </div>
     );
