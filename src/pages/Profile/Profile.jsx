@@ -95,7 +95,7 @@ export const Profile = () => {
                             size="60"
                             speed="1.5"
                             color="yellow"
-                        ></l-grid></div>) //toodo poner un gif cargando
+                        ></l-grid></div>) 
                     : (<div>
                         <CustomInput
                             className={`inputDesign ${userError.first_nameError !== "" ? "inputDesignError" : ""}`}
@@ -129,8 +129,9 @@ export const Profile = () => {
                             disabled={write}
                             onBlur={(e) => checkError(e)}
                         />
+                        <div className="profileDesignRow"> 
                 <CustomButton
-                    className={write === "" ? "CustomButtonDesignB CustomButtonDesign" : "CustomButtonDesign"}
+                    className={write === "" ? "CustomButtonDesign" : "CustomButtonDesign"}
                     title={write === "" ? "Confirm" : "Edit"}
                     functionEmit={write === "" ? () => updateData() : () => setWrite("")}
                 />
@@ -139,6 +140,7 @@ export const Profile = () => {
                     title={"Appointments"}
                     functionEmit={() => navigate("/appointments")}
                 />
+                </div>
                     </div>)
                 }
 

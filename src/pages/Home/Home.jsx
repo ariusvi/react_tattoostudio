@@ -11,9 +11,10 @@ export const Home = () => {
     return (
         <>
             <Header />
+            <div className='homeCenter'>
             <div className='title'>Old Ink</div>
             <div className='homeDesign'>
-                <div><img src={homePhoto} alt="tattoo_oldink" /></div>
+                <div className='image'><img src={homePhoto} alt="tattoo_oldink" /></div>
                 <div className='text'>¡Bienvenido a Old Ink! <br></br>
                     Somos un equipo apasionado de artistas del tatuaje dedicados a convertir tus ideas en obras de arte permanentes. Con un enfoque en la calidad, la creatividad y la seguridad, estamos aquí para ayudarte a expresar tu individualidad a través de impresionantes tatuajes personalizados. Explora nuestra galería y déjanos ser parte de tu próxima aventura en el mundo del arte corporal. ¡Bienvenido a nuestra comunidad de autoexpresión!
                 </div>
@@ -21,14 +22,15 @@ export const Home = () => {
                     <CustomButton
                         className={'CustomButtonDesign'}
                         title={'Servicios'}
-                        onClick={() => navigate("/facilities")}
+                        functionEmit={() => navigate("/facilities")}
                     /></div>
                 <div className='homeButtons'>
                     <CustomButton
                         className={'CustomButtonDesign'}
-                        title={'Registrate'}
-                        onClick={() => navigate("/register")}
+                        title={'Regístrate'}
+                        functionEmit={() => navigate("/register")}
                     /></div>
+            </div>
             </div>
         </>
 

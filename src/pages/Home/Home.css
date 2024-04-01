@@ -14,6 +14,13 @@
     padding: 2em;
 }
 
+.homeCenter {
+    
+    display:contents;
+    justify-content: center;
+    align-items: center;
+}
+
 .title {
     background-image: url('../../img/tatoo_title.jpg');
 
@@ -47,4 +54,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.image {
+    display: block;
+
+    max-width: 100%; 
 }
