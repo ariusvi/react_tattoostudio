@@ -222,10 +222,10 @@ export const deleteUser = async (token, userId) => {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`
         },
-        body: JSON.stringify({ userId })
+        body: JSON.stringify({ id:userId })
     }
     try {
-        const response = await fetch(`${root}users/`, options) // Elimina ${userId} de la URL
+        const response = await fetch(`${root}users/`, options) 
 
         const data = await response.json()
 

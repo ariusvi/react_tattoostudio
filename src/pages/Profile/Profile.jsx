@@ -65,8 +65,8 @@ export const Profile = () => {
 
         if (!loadedData) {
             setTimeout(() => {
-            getUserProfile()        //todo quitar el settimeout si no consigo que solo se vea el gif de cargando
-            }, 3000)
+            getUserProfile()        
+            }, 2000)
         }
     }, [user])
 
@@ -129,9 +129,6 @@ export const Profile = () => {
                             disabled={write}
                             onBlur={(e) => checkError(e)}
                         />
-                    </div>)
-                }
-
                 <CustomButton
                     className={write === "" ? "CustomButtonDesignB CustomButtonDesign" : "CustomButtonDesign"}
                     title={write === "" ? "Confirm" : "Edit"}
@@ -142,6 +139,9 @@ export const Profile = () => {
                     title={"Appointments"}
                     functionEmit={() => navigate("/appointments")}
                 />
+                    </div>)
+                }
+
             </div>
 
         </>
