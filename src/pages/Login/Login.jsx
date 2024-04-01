@@ -30,7 +30,7 @@ export const Login = () => {
 
     useEffect(()=> {
         if(tokenStorage){
-            navigate("/")  //todo corregir esto de por aqui, en teoria si tienes el token, deberia redirigirte al home, para que no vuelvas a loggearte
+            navigate("/")  
         }
     }, [tokenStorage])
 
@@ -60,14 +60,6 @@ export const Login = () => {
 
             const fetched = await loginUser(credenciales)
 
-            // if (!fetched.success) {
-            //     setMsgError(fetched.message)
-            //     return;
-            // }
-
-            // if (!fetched.token) {
-            //     return              //todo terminar esto
-            // }
 
             const decodificado = decodeToken(fetched.token) //decodificamos el token
 

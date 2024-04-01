@@ -1,4 +1,5 @@
 import "./Profile.css"
+import 'ldrs/grid'
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +9,7 @@ import { Header } from '../../Common/Header/Header';
 import { CustomButton } from "../../Common/CustomButton/CustomButton";
 
 
+
 export const Profile = () => {
     const datosUser = JSON.parse(localStorage.getItem("passport"));
     const navigate = useNavigate()
@@ -15,7 +17,7 @@ export const Profile = () => {
     const [write, setWrite] = useState("disabled");
     const [tokenStorage, setTokenStorage] = useState(datosUser?.token);
     const [loadedData, setLoadedData] = useState(false);
-    
+
     const [user, setUser] = useState({
         first_name: "",
         last_name: "",
@@ -35,9 +37,6 @@ export const Profile = () => {
         }));
     };
 
-    const checkError = (e) => {
-        //todo terminar
-    };
 
     useEffect(() => {
         if (!tokenStorage) {
@@ -56,7 +55,7 @@ export const Profile = () => {
                 setUser({
                     first_name: fetched.data.firstName,
                     last_name: fetched.data.lastName,
-                    email: fetched.data.email,          
+                    email: fetched.data.email,
                 })
 
             } catch (error) {
@@ -65,7 +64,9 @@ export const Profile = () => {
         }
 
         if (!loadedData) {
-            getUserProfile()
+            setTimeout(() => {
+            getUserProfile()        //todo quitar el settimeout si no consigo que solo se vea el gif de cargando
+            }, 3000)
         }
     }, [user])
 
@@ -76,7 +77,7 @@ export const Profile = () => {
             setUser({
                 first_name: fetched.firstName,
                 last_name: fetched.lastName,
-                email: fetched.email,          
+                email: fetched.email,
             })
             setWrite("disabled")
         } catch (error) {
@@ -89,7 +90,12 @@ export const Profile = () => {
             <Header />
             <div className='profileDesign'>
                 {!loadedData
-                    ? (<div>LOADING</div>) //toodo poner un gif cargando
+                    ? (<div>
+                        <l-grid
+                            size="60"
+                            speed="1.5"
+                            color="yellow"
+                        ></l-grid></div>) //toodo poner un gif cargando
                     : (<div>
                         <CustomInput
                             className={`inputDesign ${userError.first_nameError !== "" ? "inputDesignError" : ""}`}
@@ -125,19 +131,19 @@ export const Profile = () => {
                         />
                     </div>)
                 }
-                
+
                 <CustomButton
                     className={write === "" ? "CustomButtonDesignB CustomButtonDesign" : "CustomButtonDesign"}
                     title={write === "" ? "Confirm" : "Edit"}
                     functionEmit={write === "" ? () => updateData() : () => setWrite("")}
                 />
-                <CustomButton 
+                <CustomButton
                     className={"CustomButtonDesign"}
                     title={"Appointments"}
                     functionEmit={() => navigate("/appointments")}
                 />
-                </div>
-            
+            </div>
+
         </>
     )
 }
