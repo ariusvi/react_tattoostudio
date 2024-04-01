@@ -1,12 +1,50 @@
 .homeDesign {
-    min-height: 76vh;
-    min-width: 98vw;
+    min-height: 60vh;
+    min-width: 94.7vw;
 
     background-color:#9D9D9D;
     color: white;
 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2em;
+}
+
+.title {
+    background-image: url('../../img/tatoo_title.jpg');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 25vh;
+    min-width: 98vw;
+
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "notable", sans-serif;
+    font-size: 3.3em;
+    color: #F7F700;
+}
+
+.text{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    min-width: 49vw;
+
+    text-align: justify;
+    margin: 1.5em;
+}
+
+.homeButtons {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
