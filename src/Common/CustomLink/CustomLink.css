@@ -1,0 +1,20 @@
+.customLinkDesign{
+    color: white;
+    font-weight: bold;
+    transition: 0.2s;
+    margin: 1em;
+
+}
+
+.customLinkDesign:hover{
+    color: #F7F700;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.customLinkDesign:active{
+    color: #F7F700;
+    text-shadow: 0 0 10px #F7F700, 0 0 20px #F7F700, 0 0 30px #F7F700, 0 0 40px #F7F700;
+    transition: 0.2s;
+    cursor: pointer;
+}   

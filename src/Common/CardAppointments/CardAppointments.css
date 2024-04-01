@@ -1,0 +1,18 @@
+.cardAppointmentsDesign{
+    height: 25em;
+    width: 14em;
+
+    border-radius: 0.5em;
+
+    background-color: #12120E;
+
+    transition: 0.5s;
+
+    margin: 0.5em;
+    padding: 1.1em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,18 @@
+.headerDesign {
+    min-height: 8vh;
+    min-width: 98vw;
+
+    background-color:#090907;
+    color: white;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+}

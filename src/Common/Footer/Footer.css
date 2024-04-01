@@ -1,0 +1,12 @@
+.footerDesign {
+    min-height: 16vh;
+    min-width: 98vw;
+
+    background-color:#090907;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
