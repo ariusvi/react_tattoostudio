@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Header } from "../../Common/Header/Header";
 import { CustomButton } from "../../Common/CustomButton/CustomButton";
-import { getUsers } from "../../services/apiCalls";
+import { deleteUser, getUsers } from "../../services/apiCalls";
 
 export const SuperAdmin = () => {
 
@@ -36,6 +36,18 @@ export const SuperAdmin = () => {
     }, [tokenStorage, navigate])
 
 
+    const removeUser = async (UserId) => {
+        try {
+            const fetched = await deleteUser(tokenStorage, UserId)
+            
+            if (fetched.success) { 
+                setUsers(Users.filter(items => items.id !== UserId))
+            }
+            allUsers();
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
 
     return (
@@ -49,10 +61,14 @@ export const SuperAdmin = () => {
                             <div>{user.firstName}</div>
                             <div>{user.lastName}</div>
                             <div>{user.email}</div>
-                            <div>ELIMINAR USUARIO</div>
+                            <CustomButton 
+                            className={"CustomButtonDesignDelete"}
+                            title={`Delete ${user.firstName}`}
+                            functionEmit={() => removeUser(user.id)}
+                            />
                         </div>
                     )
-                }) : <div>No hay usuarios</div>
+                }) : ("")
             }
         </div>
         </>

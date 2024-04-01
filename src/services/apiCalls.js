@@ -214,3 +214,28 @@ export const getUsers = async (token) => {
         return error
     }
 };
+
+export const deleteUser = async (token, userId) => {
+    const options = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify({ userId })
+    }
+    try {
+        const response = await fetch(`${root}users/`, options) // Elimina ${userId} de la URL
+
+        const data = await response.json()
+
+        if (!data.success) {
+            throw new Error(data.message)
+        }
+
+        return data
+
+    } catch (error) {
+        return error
+    }
+};
