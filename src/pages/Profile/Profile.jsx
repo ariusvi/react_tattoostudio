@@ -9,7 +9,6 @@ import { Header } from '../../Common/Header/Header';
 import { CustomButton } from "../../Common/CustomButton/CustomButton";
 
 
-
 export const Profile = () => {
     const datosUser = JSON.parse(localStorage.getItem("passport"));
     const navigate = useNavigate()
@@ -17,6 +16,7 @@ export const Profile = () => {
     const [write, setWrite] = useState("disabled");
     const [tokenStorage, setTokenStorage] = useState(datosUser?.token);
     const [loadedData, setLoadedData] = useState(false);
+
 
     const [user, setUser] = useState({
         first_name: "",
@@ -49,6 +49,7 @@ export const Profile = () => {
         const getUserProfile = async () => {
             try {
                 const fetched = await getProfile(tokenStorage)
+                
 
                 setLoadedData(true)
 
@@ -68,7 +69,7 @@ export const Profile = () => {
             getUserProfile()        
             }, 2000)
         }
-    }, [user])
+    }, [])
 
     const updateData = async () => {
 
@@ -132,14 +133,22 @@ export const Profile = () => {
                         <div className="profileDesignRow"> 
                 <CustomButton
                     className={write === "" ? "CustomButtonDesign" : "CustomButtonDesign"}
-                    title={write === "" ? "Confirm" : "Edit"}
+                    title={write === "" ? "Confirmar" : "Editar"}
                     functionEmit={write === "" ? () => updateData() : () => setWrite("")}
                 />
                 <CustomButton
                     className={"CustomButtonDesign"}
-                    title={"Appointments"}
+                    title={"Citas"}
                     functionEmit={() => navigate("/appointments")}
                 />
+                {datosUser.decodificado.roleName === "super_admin" ? (
+                    <CustomButton
+                    className={"CustomButtonDesignAdmin"}
+                    title={"SuperAdmin Acces"}
+                    functionEmit={() => navigate("/superadmin")}
+                />
+                ) : "" }
+                
                 </div>
                     </div>)
                 }

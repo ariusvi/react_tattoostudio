@@ -61,3 +61,27 @@
     transition: 0.3s;
     box-shadow: 0 0 6px #CA2F2F, 0 0 20px #CA2F2F, 0 0 30px #CA2F2F, 0 0 40px #CA2F2F;
 }   
+
+.CustomButtonDesignAdmin {
+    height: 4em;
+    width: 10em;
+
+    border-radius: 0.5em;
+    margin: 1em;
+
+    background-color:#ca822f;
+    color: black;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s;
+}
+
+.CustomButtonDesignAdmin:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 6px #ca822f, 0 0 20px #ca822f, 0 0 30px #ca822f, 0 0 40px #ca822f;
+}
